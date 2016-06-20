@@ -1,7 +1,9 @@
 package com.xxx.designpatterns.create.builder;
 
-public abstract class Builder {
-	public abstract void setPart(String arg1, String arg2);
+public interface Builder {
+	public void buildPart1();
 
-	public abstract Product getProduct();
+	public void buildPart2();
+
+	public Product retrieveResult();
 }

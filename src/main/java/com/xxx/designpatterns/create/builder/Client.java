@@ -8,11 +8,11 @@ package com.xxx.designpatterns.create.builder;
  */
 public class Client {
 	public static void main(String[] args) {
-		Director director = new Director();
-		Product product1 = director.getAProduct();
-		product1.showProduct();
-
-		Product product2 = director.getBProduct();
-		product2.showProduct();
+		Builder builder = new ConcreteBuilder();
+		Director director = new Director(builder);
+		director.construct();
+		Product product = builder.retrieveResult();
+		System.out.println(product.getPart1());
+		System.out.println(product.getPart2());
 	}
 }

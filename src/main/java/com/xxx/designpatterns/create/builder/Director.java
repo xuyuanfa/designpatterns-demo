@@ -1,15 +1,26 @@
 package com.xxx.designpatterns.create.builder;
 
 public class Director {
-	private Builder builder = new ConcreteBuilder();
+	/**
+	 * 持有当前需要使用的建造器对象
+	 */
+	private Builder builder;
 
-	public Product getAProduct() {
-		builder.setPart("宝马汽车", "X7");
-		return builder.getProduct();
+	/**
+	 * 构造方法，传入建造器对象
+	 * 
+	 * @param builder
+	 *            建造器对象
+	 */
+	public Director(Builder builder) {
+		this.builder = builder;
 	}
 
-	public Product getBProduct() {
-		builder.setPart("奥迪汽车", "Q5");
-		return builder.getProduct();
+	/**
+	 * 产品构造方法，负责调用各个零件建造方法
+	 */
+	public void construct() {
+		builder.buildPart1();
+		builder.buildPart2();
 	}
 }

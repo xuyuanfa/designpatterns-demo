@@ -1,19 +1,25 @@
 package com.xxx.designpatterns.create.builder;
 
 public class Product {
-	private String name;
-	private String type;
+	/**
+	 * 定义一些关于产品的操作
+	 */
+	private String part1;
+	private String part2;
 
-	public void showProduct() {
-		System.out.println("名称：" + name);
-		System.out.println("型号：" + type);
+	public String getPart1() {
+		return part1;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setPart1(String part1) {
+		this.part1 = part1;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public String getPart2() {
+		return part2;
+	}
+
+	public void setPart2(String part2) {
+		this.part2 = part2;
 	}
 }
